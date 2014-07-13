@@ -1,0 +1,38 @@
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="command_box.js"></script>
+<script>
+$(function(){
+  var custom_options = {
+    hadouken: {
+      command: "38,38,40,40",
+      action: function(){
+        $('div.js-hadouken').show();
+        setTimeout(function(){ $('div.js-hadouken').hide() }, 3000);
+      }
+    },
+    kamekameha: {
+      command: "38,40,37,39,37,39",
+      action: function(){
+        $('div.js-kamekameha').show();
+        setTimeout(function(){ $('div.js-kamekameha').hide() }, 4000);
+      }
+    }
+  }
+
+  var command_box = new commandBox(custom_options);
+  $(window).keyup(function(e){
+    command_box.input(e.keyCode);
+  });
+
+});
+</script>
+
+$KONAMI COMMAND/ DOUMAE DOJO$
+
+<div class="js-hadouken" style="display: none;">
+  <img src="hadouken.gif" alt="hadouken">
+</div>
+
+<div class="js-kamekameha" style="display: none;">
+  <img src="kamekameha.gif" alt="hadouken">
+</div>
