@@ -4,7 +4,7 @@
 $(function(){
   var custom_options = {
     hadouken: {
-      command: "38,38,40,40",
+      command: "38,37,40,39",
       action: function(){
         $('div.js-hadouken').show();
         setTimeout(function(){ $('div.js-hadouken').hide() }, 3000);
@@ -27,7 +27,9 @@ $(function(){
 });
 </script>
 
-$KONAMI COMMAND/ DOUMAE DOJO$
+<div>
+  <p class="js-doumae" style="width:325px;">$KONAMI COMMAND/ DOUMAE DOJO$</p>
+</div>
 
 <div class="js-hadouken" style="display: none;">
   <img src="images/hadouken.gif" alt="hadouken">

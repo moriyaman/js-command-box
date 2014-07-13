@@ -1,9 +1,19 @@
 var commandBox = function(custom_options){
   var commands = [];
   var command_options = {
-    conami_command: {
+    konami_command: {
       command: "38,38,40,40,37,39,37,39",
-      action: function(){ console.log('hadouken'); }
+      action:
+        function(){
+          $('p.js-doumae').animate({zIndex:1},{duration:1000,
+            step:function(now){
+              $(this).css({transform:'rotate(' + (now * 1080) + 'deg)'});
+            },
+            complete:function(){
+              $('p.js-doumae').css('zIndex', 0);
+            }
+          });
+        }
     }
   };
   $.extend(command_options, custom_options);
